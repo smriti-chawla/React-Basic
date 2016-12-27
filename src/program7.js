@@ -1,5 +1,6 @@
 /**
  * Created by TTND on 12/27/2016.
+ * Create a page called UserPage. Use the "Header", "Users" and "Footer" components created above to create a complete page for the user details including header, footer and the content.
  */
 import React from 'react'
 import Header from './header.js'

@@ -1,5 +1,6 @@
 /**
  * Created by TTND on 12/27/2016.
+ * Create a component called "Users". Use the below mentioned list to display user details for all the users.
  */
 import React from 'react'
 export default class Users extends React.Component {

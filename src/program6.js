@@ -1,5 +1,6 @@
 /**
  * Created by TTND on 12/27/2016.
+ * Abstract away the map logic from the above created component "Users" into a new component called "UserDetail". Use this new component for every user in the above list and refactor the "Users" component to use "UserDetail" inside it.
  */
 import React from 'react'
 export default class User extends React.Component {
