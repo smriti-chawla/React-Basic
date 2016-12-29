@@ -11,7 +11,7 @@
  When form is loaded for the first time, FirstName should be focused.
  */
 import React from 'react';
-import InputField from './Input.js';
+//import InputField from './Input.js';
 
 export default class Registration  extends React.Component {
     constructor(props) {
@@ -22,7 +22,7 @@ export default class Registration  extends React.Component {
     }
     handleChange(event) {
         let initialValue = this.state;
-        initialValue[event.target.name].value = event.target.value;
+        initialValue[event.target.name] = event.target.value;
         this.setState(initialValue);
     }
 
@@ -30,7 +30,8 @@ export default class Registration  extends React.Component {
         e.preventDefault();
         let emailExp = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-        if (this.props.firstName.value ==="") {
+        if (this.state.firstName.value ==="") {
+            console.log(1);
             this.setState({
                 firstName: {
                     errVal: 'first Name is required'
@@ -39,7 +40,7 @@ export default class Registration  extends React.Component {
 
             });
         }
-        if (this.props.lastName.value ==="") {
+        if (this.state.lastName.value ==="") {
             this.setState({
                 lastName: {
                     errVal: 'Last Name is required'
@@ -49,7 +50,7 @@ export default class Registration  extends React.Component {
             });
 
         }
-        if(this.props.firstName.value === this.props.lastName.value ){
+        if(this.state.firstName.value === this.state.lastName.value ){
             this.setState({
                 lastName: {
                     errVal: 'First Name and last name should not be equal'
@@ -59,7 +60,7 @@ export default class Registration  extends React.Component {
             });
 
         }
-        if (emailExp.test(this.props.email)) {
+        if (emailExp.test(this.state.email)) {
             this.setState({
                 email: {
                     errVal: 'Email not Valid'
@@ -68,7 +69,7 @@ export default class Registration  extends React.Component {
 
             });
         }
-        if(this.props.password.value !== this.props.confirmPassword.value) {
+        if(this.state.password.value !== this.state.confirmPassword.value) {
             this.setState({
                 password: {
                     errVal: 'password and confirm password not equal'
@@ -82,34 +83,40 @@ export default class Registration  extends React.Component {
 
     }
 
-    render() { let user=this.state;
+    render() {
+        let user=this.state, errorEle ;
+
         let element=(
             <form onSubmit={this.handleSubmit}>
             <table>
                 <tr>
                     <td>FirstName</td>
-                    <td><InputField type="text" name="firstName" value={this.state.firstName.value} onChange={this.handleChange} /></td>
-                        if({this.state.firstName.errVal.length} ==0) {
-                            <td>{this.state.firstName.errVal}</td>
-                        }
-
+                    <td>
+                        <input type="text" name="firstName" value={this.state.firstName.value} onChange={this.handleChange}/>
+                        </td>
+                    {this.state.firstName.errVal === '' ? '' :<td className="error">{this.state.firstName.errVal}</td>}
                 </tr>
                 <tr>
                     <td>LastName</td>
-                    <td><InputField type="text" name="lastName" value={this.state.lastName.value} onChange={this.handleChange} /></td>
+                    <td><input type="text" name="lastName" value={this.state.lastName.value} onChange={this.handleChange} /></td>
+                    {this.state.lastName.errVal === '' ? '' :<td className="error">{this.state.lastName.errVal}</td>}
                 </tr>
                 <tr>
                     <td>Email</td>
-                    <td><InputField type="email" name="email" value={this.state.email.value} onChange={this.handleChange} /></td>
+                    <td><input type="email" name="email" value={this.state.email.value} onChange={this.handleChange} /></td>
+                    {this.state.email.errVal === '' ? '' :<td className="error">{this.state.email.Email}</td>}
                 </tr>
                 <tr>
                     <td>Password</td>
-                    <td><InputField type="password" name="password" value={this.state.password.value} onChange={this.handleChange} /></td>
+                    <td><input type="password" name="password" value={this.state.password.value} onChange={this.handleChange} /></td>
+                    {this.state.password.errVal === '' ? '' :<td className="error">{this.state.password.Email}</td>}
                 </tr>
                 <tr>
                     <td>Confirm Password</td>
-                    <td><InputField type="password" name="confirmPassword" value={this.state.confirmPassword.value} onChange={this.handleChange} /></td>
+                    <td><input type="password" name="confirmPassword" value={this.state.confirmPassword.value} onChange={this.handleChange} /></td>
+                    {this.state.confirmPassword.errVal === '' ? '' :<td className="error">{this.state.confirmPassword.Email}</td>}
                 </tr>
+
                 <tr><td><input type="submit" value="Submit" /></td></tr>
             </table>
 </form>

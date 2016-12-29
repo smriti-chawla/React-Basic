@@ -16,8 +16,15 @@ export default class Water  extends React.Component {
     }
 
     render() {
-        const displayDetails =
-            (this.state.temperature <= 0) ? <div> Water is in a solid state</div> : (this.state.temperature > 0 && this.state.temperature < 100) ? <div>Water in Liquid state</div>: <div>Water in Gas state</div>
+
+            let displayDetails ;
+            if (this.state.temperature <= 0) {
+                displayDetails = <div> Water is in a solid state</div>
+            }
+           else if(this.state.temperature > 0 && this.state.temperature < 100) {
+                displayDetails = <div>Water in Liquid state</div>
+           }
+           else{ displayDetails = <div>Water in Gas state</div>}
 
         return (
             <div>

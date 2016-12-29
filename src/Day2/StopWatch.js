@@ -20,10 +20,10 @@ export default class StopWatch  extends React.Component {
 
     componentDidMount() {
 
-        if(this.state.buttonVal =="Start") {
+        if(this.state.buttonVal === "Start") {
             this.timerID = setInterval(
                 () => this.changeTime(),
-                0.001
+                1
             );
         }
     }
@@ -45,10 +45,10 @@ export default class StopWatch  extends React.Component {
 
     }
     msToTime(duration) {
-        let milliseconds = parseInt((duration%99))
-            , seconds = parseInt((duration/99))
-            , minutes = parseInt((duration/(99*60)))
-            , hours = parseInt((duration/(99*60*60)));
+        let milliseconds = parseInt((duration%1000))
+            , seconds = parseInt((duration/1000))
+            , minutes = parseInt((duration/(1000*60)))
+            , hours = parseInt((duration/(1000*60*60)));
 
         hours = (hours < 10) ? "0" + hours : hours;
         minutes = (minutes < 10) ? "0" + minutes : minutes;
@@ -57,7 +57,7 @@ export default class StopWatch  extends React.Component {
         return hours + ":" + minutes + ":" + seconds + "." + milliseconds;
     }
     render() {
-        let time = this.msToTime.call(this,this.state.time);
+        let time = this.msToTime(this.state.time);
         return (
             <div>
                 <div>Time Passed: {time}</div>

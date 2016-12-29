@@ -21,9 +21,9 @@ export default class UserValidation  extends React.Component {
             </thead>
             <tbody>
                  {
-            userArr.map((user, i) =>(
-                <UserInfo key={i} user={user} />
-            ))}
+            userArr.map((user, i) => {
+                     <UserInfo key={i} user={user} />
+                     })}
             </tbody>
             </table>
         );
