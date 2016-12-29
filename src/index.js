@@ -11,10 +11,16 @@ import Water from './Day2/program1';
 import Temperature from './Day2/program2';
 import UserDetail from './Day2/program3';
 import UserValidation from './Day2/program4'
-import Cart from './Day2/Cart';
+//import Cart from './Day2/Cart';
 import StopWatch from './Day2/StopWatch';
-import Registration from './Day2/Registration'
-
+import Registration from './Day2/Registration';
+import {Router, Route, browserHistory } from 'react-router';
+//import App from './Day3/Program1/App';
+//import routes from './Day3/Program1/routes';
+import Login from './Day3/Program2/Login';
+import App from './Day3/Program2/App'
+import routes from './Day3/Program2/routes.js'
+import Cart from './Day3/Program3/cart'
 
 let app = document.getElementById('main');
 
@@ -38,4 +44,8 @@ const user = [
 //render(<UserValidation user={user}/>, app)
 //render(<Cart/>, app)
 //render(<StopWatch/>, app)
-render(<Registration/>,app)
+//render(<Registration/>,app)
+
+//render(<Router history={browserHistory} routes={routes}></Router>, app);
+//render(<Router history={browserHistory} routes={routes}/>, app);
+render(<Cart/>, app);

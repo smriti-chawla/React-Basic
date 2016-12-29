@@ -1,0 +1,7 @@
+.navigation {
+   background: grey;
+    padding: 20px;
+}
+.navigation li{
+    display: inline-block;
+}
