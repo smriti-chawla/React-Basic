@@ -20,7 +20,9 @@ import {Router, Route, browserHistory } from 'react-router';
 import Login from './Day3/Program2/Login';
 import App from './Day3/Program2/App'
 import routes from './Day3/Program2/routes.js'
-import Cart from './Day3/Program3/cart'
+import Cart from './Day3/Program3/cart';
+import Top from './Day4/Program1/Top';
+import Main from './Day4/Program2/Main';
 
 let app = document.getElementById('main');
 
@@ -48,4 +50,6 @@ const user = [
 
 //render(<Router history={browserHistory} routes={routes}></Router>, app);
 //render(<Router history={browserHistory} routes={routes}/>, app);
-render(<Cart/>, app);
+//render(<Cart/>, app);
+//render(<Top/>, app);
+render(<Main/>, app);
