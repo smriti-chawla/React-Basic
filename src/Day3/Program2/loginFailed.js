@@ -5,9 +5,7 @@ import React from 'react';
 import {Router, Route, browserHistory } from 'react-router';
 
 export default class LoginFailed extends React.Component {
-    constructor() {
-        super()
-    }
+
     handleSubmit(event)
     {
 
