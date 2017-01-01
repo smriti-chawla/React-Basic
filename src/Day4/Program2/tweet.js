@@ -3,6 +3,7 @@
  * Create components Cart, Item and CartTotal. Cart component displays list of Items and CartTotal. (set items in the state of Cart)  sample items = [ {name: 'item1', qty:2, price: 30}, {name: 'item2', qty:5, price: 10}, {name: 'item3', qty:7, price: 120}, ]
  */
 import React from 'react';
+require('./tweet.scss');
 export default class Tweet extends React.Component {
     constructor(props) {
         super(props);
@@ -59,7 +60,7 @@ export default class Tweet extends React.Component {
         };
         return (
             <div>
-                <textarea placeholder="Write your tweet in this box." value={this.state.value} onChange={this.handleChange} style= {textareaStyling}/>
+                <textarea className="textarea-cont" placeholder="Write your tweet in this box." value={this.state.value} onChange={this.handleChange} style= {textareaStyling}/>
                 <input onClick={this.handleSubmit} type="submit" value="Submit"  style= {subButton}/>
                 <div>{this.state.charleft}</div>
             </div>
