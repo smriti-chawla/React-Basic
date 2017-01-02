@@ -29,7 +29,7 @@ export default class Tweet extends React.Component {
         }
         else {
             this.setState({
-                event: 'inherit',
+                event: 'auto',
                 background:'rgba(255, 87, 34, 0.91)',
                 value: event.target.value,
                 charleft: this.state.limit - event.target.value.length

@@ -65,7 +65,7 @@ export default class ScrollTop extends React.Component {
             display: this.state.display
         };
         return (
-                <FontAwesome name="arrow-circle-up" style={fontStyle} onClick={this.handClick} top={this.props.top} left={this.props.left} right={this.props.right} bottom={this.props.bottom} background={this.props.background}/>
+                <FontAwesome name="arrow-circle-up" style={fontStyle} onClick={this.handClick}/>
             );
     }
 
