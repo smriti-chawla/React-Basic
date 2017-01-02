@@ -51,5 +51,5 @@ const user = [
 //render(<Router history={browserHistory} routes={routes}></Router>, app);
 //render(<Router history={browserHistory} routes={routes}/>, app);
 //render(<Cart/>, app);
-//render(<Top/>, app);
-render(<Main/>, app);
+render(<Top/>, app);
+//render(<Main/>, app);
