@@ -11,7 +11,7 @@ let initialState ={
     {name:'b', price:10, qty:1},
     {name:'c', price:30, qty:1}
   ]
-}
+};
 
 const cartReducer = function (state = initialState, action) {
   console.log(state.itemList, 'djkkkkkkkkkkkkkkkkkkknpm');
@@ -25,21 +25,25 @@ const cartReducer = function (state = initialState, action) {
     case DEC_QTY: {
       let newColl = [...state.itemList];
       if(newColl[action.index].qty >= '1') {
-
         newColl[action.index].qty--;
-
       }
       return { ...state, itemList: newColl};
     }
     case REMOVE_QTY: {
-      console.log(3);
       let newColl = [...state.itemList];
       newColl.splice(action.index, 1);
       return { ...state, itemList: newColl};
     }
-    // case ADD_ITEM: {
-    //   return { ...state, hour: action.hour };
-    // }
+    case ADD_ITEM: {
+      console.log('item Add', action);
+      let addedItem = action.item.split('-');
+      let elevalue ={qty: 1};
+      let newColl = [...state.itemList];
+      elevalue.name=addedItem[0];
+      elevalue.price=addedItem[1];
+      newColl.push(elevalue);
+      return { ...state, itemList: newColl};
+    }
     default: return state;
   }
 

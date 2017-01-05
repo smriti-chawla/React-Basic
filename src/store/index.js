@@ -9,7 +9,7 @@ middleware.push(createLogger());
 const configureStore = () => {
   return createStore(
     rootReducer,
-    applyMiddleware(...middleware)
+    applyMiddleware(...middleware) 
   );
 };
 export default configureStore;

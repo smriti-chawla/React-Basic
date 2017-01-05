@@ -12,7 +12,7 @@ export default class CartList  extends React.Component {
     }
     render() {
         const {itemList} = this.props;
-
+   
         return (
             <table>
                 <tr>
