@@ -9,7 +9,7 @@ class Student {
     }
 
     print() {
-         return "hi your name is " + this.name + " and roll no " + this.rollno
+         return `hi your name is ${this.name} and roll no ${this.rollno}`;
     }
 }
 let a = new Student('smriti',12);

@@ -13,9 +13,9 @@ export default class BasicPage extends React.Component {
     render() {
         return (
                     <div>
-                        <Header></Header>
-                        <Footer></Footer>
-                        <Content></Content>
+                        <Header/>
+                        <Footer/>
+                        <Content/>
                     </div>
             );
     }

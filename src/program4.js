@@ -8,7 +8,7 @@ export default class Users extends React.Component {
         super()
     }
     render() {
-        const user =[{
+        const userList =[{
             "_id": "58613042d144513fd8c03bbc",
             "isActive": true,
             "age": 38,
@@ -75,7 +75,7 @@ export default class Users extends React.Component {
                 </thead>
                 <tbody>
                     {
-                        user.map((user, i) =>(
+                        userList.map((user, i) =>(
                             <tr key={i}>
                                 <td>{user.name}</td>
                                 <td>{user.gender}</td>
