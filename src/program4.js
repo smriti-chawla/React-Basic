@@ -80,9 +80,7 @@ export default class Users extends React.Component {
                     <th>email</th>
                 </thead>
                 <tbody>
-                    {
-                      userSection
-                    }
+                    {userSection}
                 </tbody>
             </table>
     );
