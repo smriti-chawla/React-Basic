@@ -12,7 +12,8 @@ import {
   INC_QTY,
   DEC_QTY,
   REMOVE_QTY,
-  ADD_ITEM
+  ADD_ITEM,
+  LOGGING_IN
 } from '../constants';
 
 import fetch from 'isomorphic-fetch';
@@ -99,6 +100,14 @@ export function fetchTweetsStarted() {
   }
 }
 
+export function logginIn(isUserLoggedIn) {
+  return {
+    type:LOGGING_IN,
+    isUserLoggedIn
+
+  }
+}
+
 export function fetchTweetsSuccess(tweets) {
   return {
     type: FETCH_TWEET_SUCCESS,
@@ -111,6 +120,7 @@ export function fetchTweetsFailed() {
     type: FETCH_TWEET_FAILED
   }
 }
+
 
 export function fetchTweets() {
   return (dispatch) => {

@@ -7,7 +7,6 @@ export default class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {userName: '', password:''};
-
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -20,15 +19,11 @@ export default class Login extends React.Component {
     }
 
     handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.userName);
-        if(this.state.userName !== 'smriti' && this.password !== '123') {
-           browserHistory.push('/failed');
-        }
-        else {
-            browserHistory.push('/home');
-        }
-        event.preventDefault();
+      if(!this.state.userName || !this.state.password){
 
+      }
+      this.props.logginIn(isUserLoggedIn);
+      event.preventDefault();
     }
 
     render() {

@@ -12,6 +12,8 @@ export const INC_QTY ="INC_QTY";
 export const DEC_QTY ="DEC_QTY";
 export const REMOVE_QTY ="REMOVE_QTY";
 export const ADD_ITEM ="ADD_ITEM";
+export const LOGGING_IN ="LOGGING_IN";
+
 
 
 
