@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import React from 'react';
 import {render} from 'react-dom';
+
 import HelloWorld from './program2';
 import Header from './program3';
 import Users from './program4';
@@ -24,6 +25,7 @@ import Cart from './Day3/Program3/cart';
 import Top from './Day4/Program1/Top';
 import Main from './Day4/Program2/Main';
 
+
 let app = document.getElementById('main');
 
 const user = [
@@ -34,7 +36,7 @@ const user = [
     {name: 'Ben', age: 30, avatar:'https://randomuser.me/api/portraits/men/2.jpg' }
 ];
 
-//render(<HelloWorld />, app)
+render(<HelloWorld />, app)
 //render(<Header comp ={HelloWorld}/>, app)
 //render(<Users />, app)
 //render(<BasicPage />, app)
@@ -52,4 +54,6 @@ const user = [
 //render(<Router history={browserHistory} routes={routes}/>, app);
 //render(<Cart/>, app);
 //render(<Top/>, app);
-render(<Main/>, app);
+// render(<Main/>, app);
+
+// render(<Home/>,app);

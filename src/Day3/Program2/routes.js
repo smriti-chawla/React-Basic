@@ -1,7 +1,7 @@
 /**
  * Created by TTND on 12/27/2016.
  */
-import React, {Component} from 'react'
+import React, {Component} from 'react';
 import Home from './home';
 import LoginFailed from './loginFailed';
 import Login from './Login';

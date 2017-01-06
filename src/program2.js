@@ -11,7 +11,7 @@ export default class HelloWorld extends React.Component {
         super()
     }
     render() {
-        return (<h1>Hello World</h1>);
+        return (<h1 className="hello">Hello World</h1>);
     }
 }
 
