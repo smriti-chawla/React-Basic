@@ -64,8 +64,14 @@ export default class Users extends React.Component {
                 "gender": "female",
                 "email": "annettewhitaker@codax.com"
             }
-        ]
-
+        ];
+        let userSection = userList.map((user, i) =>(
+          <tr key={i}>
+            <td>{user.name}</td>
+            <td>{user.gender}</td>
+            <td>{user.email}</td>
+          </tr>
+        ));
         return (
             <table>
                 <thead>
@@ -75,13 +81,7 @@ export default class Users extends React.Component {
                 </thead>
                 <tbody>
                     {
-                        userList.map((user, i) =>(
-                            <tr key={i}>
-                                <td>{user.name}</td>
-                                <td>{user.gender}</td>
-                                <td>{user.email}</td>
-                            </tr>
-                        ))
+                      userSection
                     }
                 </tbody>
             </table>

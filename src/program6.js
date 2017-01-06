@@ -85,6 +85,8 @@ export default class User extends React.Component {
 );
 }
 }
+
+
 class UserDetail extends React.Component {
     render() {
         return (
