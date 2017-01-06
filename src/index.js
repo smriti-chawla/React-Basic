@@ -4,13 +4,15 @@ import { Provider } from 'react-redux';
 import React from 'react';
 import App from './App';
 import createStore from './store';
-
+import {Router, browserHistory } from 'react-router';
 const store = createStore();
+import routes from './routes';
 
 render(
 <Provider store={store}>
-  <App />
-  </Provider>,
+  <Router history={browserHistory} routes={routes}>
+  </Router>
+</Provider>,
   document.getElementById('main')
 );
 

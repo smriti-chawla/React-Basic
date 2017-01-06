@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import  {incQty,
+import { connect } from 'react-redux';
+import {
+  incQty,
   decQty,
   removeQty,
-  addItem} from '../actions';
+  addItem
+} from '../actions';
 import CartTotal from './cartTotal';
 
-export default class CartList extends Component {
+class CartList extends Component {
   constructor(props) {
     super(props);
     this.state= {
@@ -66,3 +69,23 @@ export default class CartList extends Component {
     )
   }
 }
+let CartListComponent = connect((state) => {
+  return state;
+}, (dispatch) => {
+  return {
+    incQty(index) {
+      dispatch(incQty(index));
+    },
+    decQty(index) {
+      dispatch(decQty(index));
+    },
+    removeQty(index) {
+      dispatch(removeQty(index));
+    },
+    addItem(item) {
+      dispatch(addItem(item));
+    }
+  };
+})(CartList);
+
+export default CartListComponent;

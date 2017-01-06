@@ -3,7 +3,13 @@
  */
 import React from 'react';
 import {Router, Route, browserHistory } from 'react-router';
-export default class Login extends React.Component {
+import { connect } from 'react-redux';
+import {
+
+  logginIn
+
+} from '../actions';
+class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {userName: '', password:''};
@@ -15,15 +21,21 @@ export default class Login extends React.Component {
         let initialValue = this.state;
         this.setState(initialValue);
         initialValue[event.target.name] = event.target.value;
+    }
 
+    componentWillReceiveProps(newProps) {
+      if(newProps.login.isUserLoggedIn) {
+        browserHistory.push('/home');
+      }
     }
 
     handleSubmit(event) {
-      if(!this.state.userName || !this.state.password){
-
-      }
-      this.props.logginIn(isUserLoggedIn);
       event.preventDefault();
+      if(!this.state.userName || !this.state.password){
+          console.log('enter both the fields');
+      }
+      this.props.logginIn(this.state.userName, this.state.password);
+
     }
 
     render() {
@@ -44,3 +56,15 @@ export default class Login extends React.Component {
             );
     }
 }
+let loginComponent = connect((state) => {
+  console.log('login state', state);
+  return state;
+}, (dispatch) => {
+  return {
+    logginIn(userName,password) {
+      dispatch(logginIn(userName,password));
+    }
+  };
+})(Login);
+
+export default loginComponent;

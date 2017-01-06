@@ -100,10 +100,11 @@ export function fetchTweetsStarted() {
   }
 }
 
-export function logginIn(isUserLoggedIn) {
+export function logginIn(userName,password) {
   return {
     type:LOGGING_IN,
-    isUserLoggedIn
+    userName,
+    password
 
   }
 }

@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import configureStore from '../store';
-export default class Watch extends Component {
+import {
+  changeSeconds,
+  changeMinutes,
+  changeHours
+} from '../actions'
+import { connect } from 'react-redux';
+class Watch extends Component {
   constructor(props) {
     super(props);
   }
@@ -41,3 +47,24 @@ export default class Watch extends Component {
     );
   }
 }
+
+let WatchComponent = connect((state) => {
+  return state;
+}, (dispatch) => {
+  return {
+
+    changeSeconds(second) {
+      dispatch(changeSeconds(second));
+
+    },
+    changeMinutes(minute) {
+      dispatch(changeMinutes(minute));
+
+    },
+    changeHours(hour) {
+      dispatch(changeHours(hour));
+    }
+  };
+})(Watch);
+
+export default WatchComponent;
