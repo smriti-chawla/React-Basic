@@ -3,12 +3,14 @@
  */
 import App from '../App';
 import React, {Component} from 'react';
+import EmpList from '../component/empList';
+import {Route,IndexRoute} from 'react-router';
+import UpdateEmp from '../component/updateEmp';
+
 export default (
   <Route path="/"  component={App}>
-    <IndexRoute component={}/>
-    <Route path="/" component={}>
-        <Route path="/" component={}/>
-        <Route path="/" component={}/>
-    </Route>
+    <IndexRoute component={EmpList}/>
+    <Route path="/create" component={UpdateEmp}/>
+    <Route path="/" component={UpdateEmp}/>
   </Route>
 );
